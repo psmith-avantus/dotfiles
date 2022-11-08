@@ -1,0 +1,22 @@
+
+" Set line numbers
+:set number
+
+" Set magic for regex
+set magic
+
+" Syntax highlighting
+syntax enable
+
+" Set spaces instead of tabs
+set expandtab
+" 1 tab is 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" Auto-indent, smart-indent, and line-wrap
+set ai
+set si
+set wrap
+
+imap jj <Esc>
