@@ -2,7 +2,7 @@
 
 THIS_DIRECTORY="$(dirname "$(realpath "$0")")"
 
-for file in "${THIS_DIRECTORY}/*"; do
-    cp "${file}" "~/.${file}"
+for file in "${THIS_DIRECTORY}/to_install/"*; do
+    cp "${file}" "~/.$(basename ${file})"
 done
 
