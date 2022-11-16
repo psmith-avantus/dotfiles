@@ -3,6 +3,6 @@
 THIS_DIRECTORY="$(dirname "$(realpath "$0")")"
 
 for file in "${THIS_DIRECTORY}/to_install/"*; do
-    cp "${file}" "~/.$(basename ${file})"
+    cp "${file}" "/root/.$(basename ${file})"
 done
 
