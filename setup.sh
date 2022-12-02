@@ -1,13 +1,19 @@
 #!/bin/bash
 
-THIS_DIRECTORY="$(dirname "$(realpath "$0")")"
+this_directory="$(dirname "$(realpath "$0")")"
 
-for file in "${THIS_DIRECTORY}/to_install/"*; do
+# We search for all files in the to_install/ directory of this repo.
+for file in "${this_directory}/to_install/"*; do
+    # And then determine a new location for that file (/root/.${file name})
     new_file="/root/.$(basename ${file})"
+    
+    # If the file already exists in the destination location,
     if [ -f "${new_file}" ]; then
-        cat "${file}" >> ${new_file}
+        # We append to the end of the existing file.
+        cat "${file}" >> "${new_file}"
     else
-        cp "${file}" "/root/.$(basename ${file})"
+        # Otherwise we just copy our file over.
+        cp "${file}" "${new_file}"
     fi
 done
 
