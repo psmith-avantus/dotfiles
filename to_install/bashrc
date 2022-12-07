@@ -89,3 +89,9 @@ clear_git_branches() {
 
 source /usr/share/bash-completion/completions/git
 
+
+ptest() {
+    poetry run black . && poetry run mypy . && poetry run pytest
+}
+
+
